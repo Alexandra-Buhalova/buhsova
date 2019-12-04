@@ -14,6 +14,8 @@ class KvadrUr extends LineUr implements \core\EquationInterface
 		   return $this->lineUr($b,$c);
 		}
 		$dir = $this->dir($a, $b, $c);
+        MyLog::log("This is kvadr ur");
+        MyLog::log("Equation: $a*x^2 + $b*x + $c = 0");
 		if ($dir > 0) 
 		{
 			$x = (-1*$b + sqrt($dir))/(2*$a);
