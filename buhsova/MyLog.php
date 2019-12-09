@@ -1,5 +1,6 @@
 <?php
 namespace buhsova;
+use \DateTime;
 class MyLog extends \core\LogAbstract implements \core\LogInterface
 {
 	public static function log($str) 
@@ -9,6 +10,9 @@ class MyLog extends \core\LogAbstract implements \core\LogInterface
 	public function _write() 
 	{
 		echo implode("\n", $this->log) . "\n";
+		$d = new DateTime();
+		$name="Log/".$d->format("d.m.Y_H.i.s.u").".log";
+		file_put_contents($name, implode("\n\r", $this->log) . "\n\r");
 	}
 	public static function write() 
 	{

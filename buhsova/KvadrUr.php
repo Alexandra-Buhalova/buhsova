@@ -7,7 +7,7 @@ class KvadrUr extends LineUr implements \core\EquationInterface
 	{
 		return $b*$b - 4*$a*$c;
 	}
-	function KvadrUr($a, $b, $c) 
+	function solve($a, $b, $c) 
 	{
 		if($a == 0)
 		{
